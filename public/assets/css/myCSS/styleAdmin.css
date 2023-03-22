@@ -1,0 +1,57 @@
+/* main page / dashboard---------------------------------------------------------------------- */
+
+
+/* content web */
+.box-menu {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: rgb(64, 64, 64);
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.box-menu:hover {
+  transition: 0.2s;
+  background-color: rgb(230, 230, 230);
+  color: rgb(49, 49, 49);
+}
+
+.box-menu .ribbon {
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  top: -1rem;
+}
+
+/* tutup content web */
+
+/* tutup main page / dashboard---------------------------------------------------------------- */
+
+/* product page-------------------------------------------------------------------------------- */
+.list-item-content a {
+  text-decoration: none;
+  color: rgb(64, 64, 64);
+}
+
+.list-item-content a:hover .body {
+  transition: 0.2s;
+  background-color: rgb(230, 230, 230);
+  color: rgb(49, 49, 49);
+}
+
+.list-item-content a .body {
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+
+/* tutup product page--------------------------------------------------------------------------- */
+
+/* responsive----------------------------------------------------------------------- */
+@media (max-width: 1000px) {
+  .list-item-content a .body {
+    padding: 0.5rem;
+  }
+}
+
+/* tutup responsive ---------------------------------------------------------------- */

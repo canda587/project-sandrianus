@@ -1,0 +1,292 @@
+@extends('mainPart.mainBody')
+@section('mainContent')
+   {{-- content --}}
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+    <div class="head-content" id="pagePromotion">
+        {{-- head banner --}}
+        
+        <div class="d-flex justify-content-between">
+            
+            <img class="banner-image left" src="{{ asset('assets/images/img_situs/banner-first.jpg') }}" alt="">
+            <img class="banner-image right" src="{{ asset('assets/images/img_situs/banner-second.jpg') }}" alt="">
+        </div>
+       
+        {{-- end head banner --}}
+
+        {{-- overlay banner --}}
+        <div class="overlay" style="opacity: 1">
+
+        </div>
+        {{-- end overlay banner --}}
+
+        {{-- content banner --}}
+        <div class="child-content">
+            <div class="container">
+    
+                <div class="web text-light mb-3">
+                    <div class="font-style-3 large-text">
+                        Selamat Datang Kawan
+                    </div>
+                    <div>Website Kami menjual produk-produk, website kami akan melayani pembelanjaan anda. Silahkan menikmati belanja anda dan Keep Enjoy.</div>
+                </div>
+        
+                {{-- carousel banner --}}
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        @php
+                            $i = 0;
+                        @endphp
+                        @foreach ($carousels as $carousel)
+                            @php
+                                 if ($i==0) {
+                                    $active = 'active';
+                                }
+                                else{
+                                    $active = "";
+                                }
+
+                                $i++;
+                            @endphp
+                            <div class="carousel-item <?= $active; ?>">
+                            <div class="carousel-content">
+                                <div class="row body shadow">
+                                    <div class="web col-5 dark-color">
+                                        <div class="large-text font-style-2">
+                                            {{ $carousel['subject']}}
+                                        </div>
+                                        <div>
+                                            {{ $carousel['description'] }}
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-lg-7">
+                                        <div class="row">
+                                            
+                                            <div class="col-12">
+                                                <img src="{{ asset($carousel['image']) }}" alt="" style="object-fit: cover; object-position: 15% 10%;">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        @endforeach
+                       
+                        
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                {{-- end carousel banner --}}
+            </div>
+        </div>
+
+        {{-- end content banner --}}
+    </div>
+
+
+    @if (count($recommendation) > 0)
+        
+        <div class="main-content container mb-5" id="pageRecommendation">
+            <div class="row dark-color mb-5">
+                <div class="col-12 text-center">
+                    <div class="font-style-3 large-text">
+                        Recommendation
+                    </div>  
+                    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Nobis consequatur soluta cumque expedita ab corporis vero 
+                        voluptates! Voluptatibus, quia similique repudiandae veniam 
+                        nobis, iste culpa commodi quae esse quasi optio sunt assumenda 
+                        quam neque nam explicabo ut ea officiis necessitatibus.
+                        </div> 
+                </div>        
+            </div>
+            
+            {{-- item card --}}
+            @php
+                $set_item_card = [
+                    'mobile_column' => 'col-6',
+                    'web_column' => 'col-lg-2',
+                    'item_data' => $recommendation 
+                ];
+            @endphp
+            @include('part.item.itemCard',$set_item_card)
+            {{-- end item card --}}
+
+        </div>
+    @endif
+    
+    <div class="middle-content mb-5" id="pageKategori">
+         <div class="container">
+             <div class="row mb-3 mb-lg-5">
+                 <div class="col-12 text-center">
+                     <div class="font-style-3 large-text">
+                         Kategori Product
+                     </div>
+                     <div>
+                         Teman-teman juga dapat melihat produk-produk di kategori kami.
+                     </div>
+                 </div>
+             </div>
+             <div class="row category-content justify-content-center">
+                @foreach ($categories as $category)
+                   <div class="col-lg-3 mb-3">
+                        <a href="/?category={{ $category->slug }}#pageProduct" >
+                            <div class="position-relative shadow">
+                                <div class="box-body">
+                                    <img src="{{asset($category->category_image) }}" alt="" style="object-fit: cover; object-position: 15% 10%;">
+                                </div> 
+                                <div class="overlay" style="border-radius: 0.5rem;">
+                                    <div class="font-style-2 large-text position-absolute top-50 start-50 translate-middle">
+                                        {{ $category->category_name }}
+                                    </div>  
+                                </div>       
+                            </div>
+                        </a>  
+                    </div>     
+                @endforeach
+                 
+             </div>
+         </div>                      
+    </div>
+    
+    
+    <div class="main-content container mb-5" id="pageProduct">
+        <div class="row dark-color mb-5">
+            <div class="col-12 text-center">
+                 <div class="font-style-3 large-text">
+                    List Product
+                 </div>  
+                 <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                     Nobis consequatur soluta cumque expedita ab corporis vero 
+                     voluptates! Voluptatibus, quia similique repudiandae veniam 
+                     nobis, iste culpa commodi quae esse quasi optio sunt assumenda 
+                     quam neque nam explicabo ut ea officiis necessitatibus.
+                    </div> 
+            </div>        
+        </div>
+        
+        {{-- item card --}}
+        @php
+            $set_item_card = [
+                'mobile_column' => 'col-6',
+                'web_column' => 'col-lg-2',
+                'item_data' => $items 
+            ];
+        @endphp
+        @include('part.item.itemCard',$set_item_card)
+        {{-- end item card --}}
+
+        <div class="d-flex justify-content-center d-lg-block mt-3">
+            
+                {{ $items->links() }}
+            
+        </div>
+    </div>
+    
+    <div class="tail-content" id="pageAbout">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <div class="font-style-3 large-text mb-2">
+                        About us
+                    </div>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Blanditiis eius dolor sapiente ratione maiores omnis 
+                        praesentium asperiores dolores quos illum! Earum nesciunt
+                         accusantium quaerat nihil ipsum maiores ut voluptatum 
+                         cupiditate. Asperiores, maiores illum? Exercitationem 
+                         repellendus blanditiis ea assumenda suscipit placeat, 
+                         vel cupiditate quidem at voluptatibus. Praesentium fugit
+                          animi culpa officiis dolore iusto quae repellat laudantium, 
+                          dicta amet maxime, rerum eaque nesciunt unde autem. Soluta,
+                           magni veritatis consequatur aliquid temporibus amet 
+                           nostrum natus sit dicta ex totam corporis cumque debitis 
+                           quia ducimus? Tempore nostrum tenetur voluptatum ratione 
+                           nisi dignissimos veritatis optio repellendus,
+                            et esse quos sint neque soluta, accusamus aliquid voluptate.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="web row">
+                <div class="col-12">
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            <img class="shadow" src="{{ asset('assets/images/img_situs/img5.jpg') }}" alt="" style="width: 100% ; height:25rem; object-fit: cover; object-position: 15% 10%;">
+                        </div>
+                        <div class="col-8">
+                            <div class="font-style-2 large-text">
+                                About 1
+                            </div>
+                            <div>
+    
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Perspiciatis nihil quis facere at odio porro obcaecati, 
+                                delectus, exercitationem iste ea rerum eveniet ratione 
+                                enim laboriosam provident placeat reprehenderit. 
+                                Excepturi tenetur molestiae similique et, molestias
+                                deserunt minus enim possimus voluptatum optio provident 
+                                inventore ipsam exercitationem hic itaque eaque repudiandae aliquid nihil!
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row mb-5">
+                        <div class="col-8">
+                            <div class="font-style-2 large-text">
+                                About 2
+                            </div>
+                            <div>
+    
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Perspiciatis nihil quis facere at odio porro obcaecati, 
+                                delectus, exercitationem iste ea rerum eveniet ratione 
+                                enim laboriosam provident placeat reprehenderit. 
+                                Excepturi tenetur molestiae similique et, molestias
+                                deserunt minus enim possimus voluptatum optio provident 
+                                inventore ipsam exercitationem hic itaque eaque repudiandae aliquid nihil!
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <img class="shadow" src="{{ asset('assets/images/img_situs/img6.jpg') }}" alt="" style="width: 100%; height:25rem; object-fit: cover; object-position: 15% 10%;">
+                        </div>
+                        
+                    </div>
+    
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            <img class="shadow" src="{{ asset('assets/images/img_situs/img7.jpg') }}" alt="" style="width: 100%; height:25rem; object-fit: cover; object-position: 15% 10%;">
+                        </div>
+                        <div class="col-8">
+                            <div class="font-style-2 large-text">
+                                About 3
+                            </div>
+                            <div>
+    
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Perspiciatis nihil quis facere at odio porro obcaecati, 
+                                delectus, exercitationem iste ea rerum eveniet ratione 
+                                enim laboriosam provident placeat reprehenderit. 
+                                Excepturi tenetur molestiae similique et, molestias
+                                deserunt minus enim possimus voluptatum optio provident 
+                                inventore ipsam exercitationem hic itaque eaque repudiandae aliquid nihil!
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div> 
+@endsection
