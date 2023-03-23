@@ -6,7 +6,7 @@
 
 </div>
 
-<div class="slash-background  position-absolute">
+<div class="slash-background regis  position-absolute">
 
 </div>
 

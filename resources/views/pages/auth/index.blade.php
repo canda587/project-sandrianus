@@ -39,7 +39,7 @@
 
 </div>
 
-<div class="slash-background  position-absolute">
+<div class="slash-background auth position-absolute">
 
 </div>
 

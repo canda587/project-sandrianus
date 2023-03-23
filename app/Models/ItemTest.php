@@ -57,23 +57,21 @@ class ItemTest
     private static $carousel = [
         [
             'image' => 'assets/images/img_situs/carousel-1.jpg',
-            'subject' => "you are actually beautiful",
-            'description' => "However, for women, we are not good at taking advantage of 
-                            the beauty potential that we are born with, therefore this 
-                            fashion is perfect for enhancing your beauty."
+            'subject' => "Make my beloved wife happy",
+            'description' => "Of course, by buying necessities such as electronics for your loved ones, 
+                                it will make it easier for them, so when are you going to buy our products."
         ],
         [
             'image' => 'assets/images/img_situs/carousel-2.jpg',
-            'subject' => "free-spirited woman",
-            'description' => "women should be free to look like they want from simple to 
-                            luxurious appearance, unlike in the past which had conditions 
-                            to dress according to their status"
+            'subject' => "Make your home atmosphere comfortable",
+            'description' => "With electronic needs that are met in your home, will give the impression of an elegant and comfortable. 
+                                make a stunning impression on your home and your guests"
         ],
         [
-            'image' => 'assets/images/img_situs/carousel-3.jpg',
-            'subject' => "appearance is important for women",
-            'description' => "As it should be for women, appearance is very important because 
-                            appearance reflects the dignity and character of a person"
+            'image' => 'assets/images/img_situs/carousel-3.png',
+            'subject' => "Trying new things at home is fun",
+            'description' => "Of course your children or relatives who visit, will definitely like to play and do various things that they find fun. 
+                            well, electronics also provide products that can satisfy their desires"
         ],
         
     ];

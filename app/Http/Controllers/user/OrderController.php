@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
 {
+    public function __construct(){
+        date_default_timezone_set("Asia/Jakarta");
+    }
+
     private function addToTransaction($order){
 
         $set_transaction = [
@@ -63,7 +67,9 @@ class OrderController extends Controller
         $set_order = [
                 'code' => $code,
                 'user_id' => auth()->user()->id_user, 
-                'order_total' => $set_data['order_total']
+                'order_total' => $set_data['order_total'],
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ];
 
             $set_list_order = [
@@ -375,16 +381,27 @@ class OrderController extends Controller
     }
 
     public function order_cancel(Order $order){
-        Order::where("code",$order->code)->update(['status_id' => 5]);
 
-        $new_order = Order::firstWhere("code",$order->code);
+        if($order->status_id == 2){
 
-        $this->addToTransaction($new_order);
-
-        $send_json = [
+            Order::where("code",$order->code)->update(['status_id' => 5]);
+    
+            $new_order = Order::firstWhere("code",$order->code);
+    
+            $this->addToTransaction($new_order);
+            $send_json = [
                 'success' => true,
                 'response' => "this Order has been cancelled", 
+            ];
+        }
+        else{
+            $send_json = [
+                'success' => true,
+                'response' => "You has been Payment", 
         ];
+        }
+
+        
         return response()->json($send_json,200);
     }
 

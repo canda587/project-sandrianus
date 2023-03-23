@@ -1,330 +1,308 @@
 :root {
-  --main-color: #96775f;
-  --main-color-bold: #403329;
-  --main-color-secondary: #e3b18a;
-  --main-color-light: #ffd4b3;
+    --main-color: #8800ff;
+    --main-color-bold: #500096;
+    --main-color-secondary: #a641ff;
+    --main-color-light: #d19dff;
 
-  --second-color: #c97151;
-  --second-color-bold: #633828;
-  --second-color-secondary: #ac6146;
-  --second-color-light: #ff8f67;
+    --second-color: #ff004c;
+    --second-color-bold: #a70032;
+    --second-color-secondary: #ff2c6b;
+    --second-color-light: #ff769f;
 
-  --third-color: #dfd65a;
-  --third-color-bold: #777330;
-  --third-color-secondary: #b1aa47;
-  --third-color-light: #fff56c;
+    --third-color: #ffae00;
+    --third-color-bold: #9c6b02;
+    --third-color-secondary: #ffc03a;
+    --third-color-light: #ffd883;
 
-  --success-color: #80ff00;
-  --success-color-bold: #337100;
-  --success-color-secondary: #5cff3f;
-  --success-color-light: #b3ff9c;
+    --success-color: #80ff00;
+    --success-color-bold: #337100;
+    --success-color-secondary: #5cff3f;
+    --success-color-light: #b3ff9c;
 
+    --fail-color: #ff2424;
+    --fail-color-bold: #b60000;
+    --fail-color-secondary: #ff3b3b;
+    --fail-color-light: #ff7e7e;
 
-  --fail-color: #ff2424;
-  --fail-color-bold: #b60000;
-  --fail-color-secondary: #ff3b3b;
-  --fail-color-light: #ff7e7e;
-
-  --darkness-color: #353535;
-  --darkness-color-light: #f5f5f5;
-
-
+    --darkness-color: #353535;
+    --darkness-color-light: #f5f5f5;
 }
 
 /* component----------------------------------------------------------------------- */
 
 .web {
-  display: block;
+    display: block;
 }
 
 .mobile {
-  display: none;
+    display: none;
 }
 
 /* overlay */
 .overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
 }
 
 /* tutup overlay */
 
 /* background */
 .background {
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .background-full {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
 }
 
-
-
 .main-background {
-  background-color: var(--main-color);
+    background-color: var(--main-color);
 }
 
 .main-background-dark {
-  background-color: var(--main-color-bold);
+    background-color: var(--main-color-bold);
 }
 
 .main-background-light {
-  background-color: var(--main-color-light);
+    background-color: var(--main-color-light);
 }
 
 .second-background {
-  background-color: var(--second-color);
+    background-color: var(--second-color);
 }
 
 .second-background-dark {
-  background-color: var(--second-color-bold);
+    background-color: var(--second-color-bold);
 }
 
 .second-background-light {
-  background-color: var(--second-color-light);
+    background-color: var(--second-color-light);
 }
 
 .third-background {
-  background-color: var(--third-color);
+    background-color: var(--third-color);
 }
 
 .third-background-dark {
-  background-color: var(--third-color-bold);
+    background-color: var(--third-color-bold);
 }
 
 .third-background-light {
-  background-color: var(--third-color-light);
+    background-color: var(--third-color-light);
 }
 
 .success-background {
-  background-color: var(--success-color);
+    background-color: var(--success-color);
 }
 
 .success-background-dark {
-  background-color: var(--success-color-bold);
+    background-color: var(--success-color-bold);
 }
 
 .success-background-light {
-  background-color: var(--success-color-light);
+    background-color: var(--success-color-light);
 }
 
 .fail-background {
-  background-color: var(--fail-color);
+    background-color: var(--fail-color);
 }
 
 .fail-background-dark {
-  background-color: var(--fail-color-bold);
+    background-color: var(--fail-color-bold);
 }
 
 .fail-background-light {
-  background-color: var(--fail-color-light);
+    background-color: var(--fail-color-light);
 }
-
-
-
 
 /* tutup background */
 
 /* color */
 .main-color-dark {
-  color: var(--main-color-bold);
+    color: var(--main-color-bold);
 }
 
 .main-color-light {
-  color: var(--main-color-light);
+    color: var(--main-color-light);
 }
 
 .second-color-dark {
-  color: var(--second-color-bold);
+    color: var(--second-color-bold);
 }
 
 .second-color-light {
-  color: var(--second-color-light);
+    color: var(--second-color-light);
 }
 
 .third-color-dark {
-  color: var(--third-color-bold);
+    color: var(--third-color-bold);
 }
 
 .third-color-light {
-  color: var(--third-color-light);
+    color: var(--third-color-light);
 }
 
 .success-color-dark {
-  color: var(--success-color-bold);
+    color: var(--success-color-bold);
 }
 
 .success-color-light {
-  color: var(--success-color-light);
+    color: var(--success-color-light);
 }
 
 .fail-color-dark {
-  color: var(--fail-color-bold);
+    color: var(--fail-color-bold);
 }
 
 .fail-color-light {
-  color: var(--fail-color-light);
+    color: var(--fail-color-light);
 }
 
 .dark-color {
-  color: var(--darkness-color);
+    color: var(--darkness-color);
 }
-
-
-
-
 
 /* tutup color */
 
 /* font */
 .font-brand {
-  font-family: "Stick No Bills", sans-serif;
+    font-family: "Stick No Bills", sans-serif;
 }
 
 .font-style-1 {
-  font-family: "Anton", sans-serif;
+    font-family: "Anton", sans-serif;
 }
 
 .font-style-2 {
-  font-family: "Bebas Neue", cursive;
+    font-family: "Bebas Neue", cursive;
 }
 
 .font-style-3 {
-  font-family: "Lobster", cursive;
+    font-family: "Lobster", cursive;
 }
 
 .large-text {
-  font-size: 2em;
+    font-size: 2em;
 }
 
 .middle-text {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .min-text {
-  font-size: 0.8em;
+    font-size: 0.8em;
 }
-
-
 
 /* tutup font */
 
 /* badges */
 .bgs {
-  border-radius: 0.5rem;
-  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
 }
 
 .bgs.success-bgs {
-  background-color: var(--success-color);
-  color: var(--success-color-bold);
+    background-color: var(--success-color);
+    color: var(--success-color-bold);
 }
 
 .bgs.fail-bgs {
-  background-color: var(--fail-color);
-  color: var(--fail-color-bold);
+    background-color: var(--fail-color);
+    color: var(--fail-color-bold);
 }
-
-
-
 
 /* tutup badges */
 
-
-
-
-
 /* button */
 .btn {
-  width: 100%;
+    width: 100%;
 }
 
 .main-btn {
-  background-color: var(--main-color);
-  color: var(--main-color-bold);
+    background-color: var(--main-color);
+    color: var(--main-color-bold);
 }
 
 .main-btn:hover {
-  transition: 0.2s;
-  color: var(--main-color-light);
-  background-color: var(--main-color-bold);
+    transition: 0.2s;
+    color: var(--main-color-light);
+    background-color: var(--main-color-bold);
 }
 
 .secondary-btn {
-  background-color: var(--second-color);
-  color: var(--second-color-bold);
+    background-color: var(--second-color);
+    color: var(--second-color-bold);
 }
 
 .secondary-btn:hover {
-  transition: 0.2s;
-  color: var(--second-color-light);
-  background-color: var(--second-color-bold);
+    transition: 0.2s;
+    color: var(--second-color-light);
+    background-color: var(--second-color-bold);
 }
 
 .third-btn {
-  background-color: var(--third-color);
-  color: var(--third-color-bold);
+    background-color: var(--third-color);
+    color: var(--third-color-bold);
 }
 
 .third-btn:hover {
-  transition: 0.2s;
-  color: var(--third-color-light);
-  background-color: var(--third-color-bold);
+    transition: 0.2s;
+    color: var(--third-color-light);
+    background-color: var(--third-color-bold);
 }
 
 .success-btn {
-  background-color: var(--success-color);
-  color: var(--success-color-bold);
+    background-color: var(--success-color);
+    color: var(--success-color-bold);
 }
 
 .success-btn:hover {
-  transition: 0.2s;
-  color: var(--success-color-light);
-  background-color: var(--success-color-bold);
+    transition: 0.2s;
+    color: var(--success-color-light);
+    background-color: var(--success-color-bold);
 }
 
 .fail-btn {
-  background-color: var(--fail-color);
-  color: var(--fail-color-bold);
+    background-color: var(--fail-color);
+    color: var(--fail-color-bold);
 }
 
 .fail-btn:hover {
-  transition: 0.2s;
-  color: var(--fail-color-light);
-  background-color: var(--fail-color-bold);
+    transition: 0.2s;
+    color: var(--fail-color-light);
+    background-color: var(--fail-color-bold);
 }
-
 
 /* tutup button */
 
 /* input */
 .upload-content {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .upload-content .body {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  cursor: pointer;
-  opacity: 0;
-  filter: alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
 
 /* tutup input */
@@ -332,42 +310,42 @@
 
 /* nav tabs ------------------------------------------------------------------------- */
 .nav.nav-tabs .nav-item .active {
-  color: rgb(90, 90, 90);
-  background-color: rgb(241, 241, 241);
-  border-bottom: 1px solid rgb(241, 241, 241);
+    color: rgb(90, 90, 90);
+    background-color: rgb(241, 241, 241);
+    border-bottom: 1px solid rgb(241, 241, 241);
 }
 
 .nav.nav-tabs .nav-item a {
-  color: var(--main-color);
+    color: var(--main-color);
 }
 
 .nav.nav-tabs .nav-item a:hover {
-  color: var(--main-color-bold);
+    color: var(--main-color-bold);
 }
 
 .nav-tabs-body {
-  padding: 0.5rem;
-  background-color: var(--darkness-color-light);
+    padding: 0.5rem;
+    background-color: var(--darkness-color-light);
 }
 
 /* tutup nav tabs ------------------------------------------------------------------- */
 
 /* dropdown ------------------------------------------------------------------------- */
 .dropdown .btn:active {
-  background-color: var(--darkness-color);
+    background-color: var(--darkness-color);
 }
 
 /* end dropdown --------------------------------------------------------------------- */
 
 /* responsive----------------------------------------------------------------------- */
 @media (max-width: 1000px) {
-  .web {
-    display: none;
-  }
+    .web {
+        display: none;
+    }
 
-  .mobile {
-    display: block;
-  }
+    .mobile {
+        display: block;
+    }
 }
 
 /* tutup responsive ---------------------------------------------------------------- */

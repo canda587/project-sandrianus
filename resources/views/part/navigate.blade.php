@@ -4,10 +4,10 @@
  <div class="shadow-sm fixed-top">
  <div class="web head-nav">
      <div class="container d-flex justify-content-end">
-         <a href="/#pageRecommendation"><i class="fa-solid fa-receipt me-2"></i>Recommendation</a>
-         <a href="/#pageKategori"><i class="fa-solid fa-boxes-stacked me-2"></i>Categories</a>
-         <a href="/#pageProduct"><i class="fa-solid fa-box-open me-2"></i>Product</a>
-         <a href="/#pageAbout"><i class="fa-solid fa-circle-info me-2"></i>About us</a>
+         <a href="/#pageRecommendation" class="text-dark"><i class="fa-solid fa-receipt me-2"></i>Recommendation</a>
+         <a href="/#pageKategori" class="text-dark"><i class="fa-solid fa-boxes-stacked me-2"></i>Categories</a>
+         <a href="/#pageProduct" class="text-dark"><i class="fa-solid fa-box-open me-2"></i>Product</a>
+         <a href="/#pageAbout" class="text-dark"><i class="fa-solid fa-circle-info me-2"></i>About us</a>
      </div>
  </div>
  <div style="background-color: white;">

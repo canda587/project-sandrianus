@@ -1,83 +1,82 @@
 :root {
-  --main-color: #96775f;
-  --main-color-bold: #403329;
-  --main-color-secondary: #e3b18a;
-  --main-color-light: #ffd4b3;
-
-
+    --main-color: #8800ff;
+    --main-color-bold: #500096;
+    --main-color-secondary: #a641ff;
+    --main-color-light: #d19dff;
 }
 
 /* auth page----------------------------------------------------------------------------- */
 .auth-content {
-  background-color: white;
-  padding: 2rem 0.5rem 1rem 0.5rem;
-  border-radius: 0.5rem;
-  position: absolute;
+    background-color: white;
+    padding: 2rem 0.5rem 1rem 0.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
 
-  left: 50%;
-  transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .auth-content .ribbon {
-  padding: 0.2rem;
-  border-radius: 0.5rem;
-  width: 100%;
-  position: absolute;
-  top: -1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--main-color-light);
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--main-color-light);
 }
 
 .auth-content.auth .ribbon {
-  background-color: var(--main-color-bold);
-
+    background-color: var(--main-color-bold);
 }
 
 .auth-content.regis .ribbon {
-  background-color: var(--main-color);
-
+    background-color: var(--main-color);
 }
 
-
-
 .auth-content.auth {
-  top: 30%;
-  width: 35%;
+    top: 30%;
+    width: 35%;
 }
 
 .auth-content.regis {
-  top: 20%;
-  width: 60%;
+    top: 20%;
+    width: 60%;
 }
 
-.slash-background {
-  width: 100%;
-  top: 50%;
-  bottom: 0;
-  z-index: 2;
-  opacity: 0.9;
-  background-color: black;
+.slash-background.auth {
+    width: 100%;
+    top: 50%;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.7;
+    background-color: rgb(255, 0, 76);
 }
-
-
+.slash-background.regis {
+    width: 100%;
+    top: 50%;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.7;
+    background-color: rgb(111, 0, 255);
+}
 
 /* tutup auth page ---------------------------------------------------------------------- */
 
 /* responsive----------------------------------------------------------------------- */
 @media (max-width: 1000px) {
+    /* auth page */
+    .auth-content.auth {
+        width: 98%;
+    }
 
-  /* auth page */
-  .auth-content.auth {
-    width: 98%;
-  }
+    .auth-content.regis {
+        top: 1rem;
+        width: 98%;
+    }
 
-  .auth-content.regis {
-    top: 1rem;
-    width: 98%;
-  }
-
-  /* tutup auth page */
+    /* tutup auth page */
 }
 
 /* tutup responsive ---------------------------------------------------------------- */

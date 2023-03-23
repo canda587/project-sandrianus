@@ -2,22 +2,10 @@
 @section('mainContent')
    {{-- content --}}
 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-    <div class="head-content" id="pagePromotion">
-        {{-- head banner --}}
-        
-        <div class="d-flex justify-content-between">
-            
-            <img class="banner-image left" src="{{ asset('assets/images/img_situs/banner-first.jpg') }}" alt="">
-            <img class="banner-image right" src="{{ asset('assets/images/img_situs/banner-second.jpg') }}" alt="">
-        </div>
+    <div class="head-content shadow" id="pagePromotion">
+      
+
        
-        {{-- end head banner --}}
-
-        {{-- overlay banner --}}
-        <div class="overlay" style="opacity: 1">
-
-        </div>
-        {{-- end overlay banner --}}
 
         {{-- content banner --}}
         <div class="child-content">
@@ -128,7 +116,7 @@
     <div class="middle-content mb-5" id="pageKategori">
          <div class="container">
              <div class="row mb-3 mb-lg-5">
-                 <div class="col-12 text-center">
+                 <div class="title col-12 text-center">
                      <div class="font-style-3 large-text">
                          Kategori Product
                      </div>
@@ -223,7 +211,7 @@
                 <div class="col-12">
                     <div class="row mb-5">
                         <div class="col-4">
-                            <img class="shadow" src="{{ asset('assets/images/img_situs/img5.jpg') }}" alt="" style="width: 100% ; height:25rem; object-fit: cover; object-position: 15% 10%;">
+                            <img class="shadow" src="{{ asset('assets/images/img_situs/img5.jpeg') }}" alt="" style="width: 100% ; height:25rem; object-fit: cover; object-position: 15% 10%;">
                         </div>
                         <div class="col-8">
                             <div class="font-style-2 large-text">
