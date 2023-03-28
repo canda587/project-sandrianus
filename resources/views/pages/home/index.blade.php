@@ -125,7 +125,28 @@
                      </div>
                  </div>
              </div>
-             <div class="row category-content justify-content-center">
+             @php
+                $align_style = '';
+                 if($categories->count() <= 3){
+                    $align_style = 'justify-content-center';
+                 }
+             @endphp
+
+             <div class="row category-content {{ $align_style }}">
+                <div class="col-lg-3 mb-3">
+                        <a href="/#pageProduct" >
+                            <div class="position-relative shadow">
+                                <div class="box-body">
+                                    <img src="{{asset('assets/images/img_situs/all_category.jpg') }}" alt="" style="object-fit: cover; object-position: 15% 10%;">
+                                </div> 
+                                <div class="overlay" style="border-radius: 0.5rem;">
+                                    <div class="font-style-2 large-text position-absolute top-50 start-50 translate-middle">
+                                        All Product
+                                    </div>  
+                                </div>       
+                            </div>
+                        </a>  
+                    </div> 
                 @foreach ($categories as $category)
                    <div class="col-lg-3 mb-3">
                         <a href="/?category={{ $category->slug }}#pageProduct" >
