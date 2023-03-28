@@ -202,7 +202,7 @@
         </div>
     </div>
     
-    <div class="tail-content" id="pageAbout">
+    <div class="tail-content show" id="pageAbout">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
@@ -298,4 +298,80 @@
         </div>
     </div>
 </div> 
+
+
+<script>
+
+    $(document).ready(() => {
+    //     $(window).on('scroll', function() {
+    //     var height_nav = $("#main-navigate").height();
+    //     var y_scroll_pos = Number(window.pageYOffset) + Number(height_nav);
+    //     var product_position = Number($('#pageProduct').offset().top) ;
+    //     var about_position = Number($('#pageAbout').offset().top);
+    //     var category_position = Number($('#pageKategori').offset().top);
+    //     var rommended_position = Number($('#pageRecommendation').offset().top);
+    //     // var scroll_pos_test = element_position;
+        
+    //      // page category
+    //      if(rommended_position){
+    //          if(y_scroll_pos > rommended_position - 300) {
+    //            $("#pageRecommendation").addClass("show");  
+    //            $("#pageRecommendation").removeClass("hide");
+                 
+    //          }
+    //          else{
+    //            console.log("is not here");
+    //            $("#pageRecommendation").removeClass("show");  
+    //            $("#pageRecommendation").addClass("hide");
+    //          }
+    //      }
+
+    //      // page category
+    //      if(category_position){
+    //          if(y_scroll_pos > category_position - 300) {
+    //            $("#pageKategori").addClass("show");  
+    //            $("#pageKategori").removeClass("hide");
+                 
+    //          }
+    //          else{
+    //            console.log("is not here");
+    //            $("#pageKategori").removeClass("show");  
+    //            $("#pageKategori").addClass("hide");
+    //          }
+    //      }
+
+
+    //     // page product
+    //     if(product_position){
+
+    //         if(y_scroll_pos > product_position - 300) {
+    //           $("#pageProduct").addClass("show");  
+    //           $("#pageProduct").removeClass("hide");
+                
+    //         }
+    //         else{
+    //           console.log("is not here");
+    //           $("#pageProduct").removeClass("show");  
+    //           $("#pageProduct").addClass("hide");
+    //         }
+    //     }
+
+    //     // page about
+    //     if(about_position){
+    //         if(y_scroll_pos > about_position - 300) {
+    //           $("#pageAbout").addClass("show");  
+    //           $("#pageAbout").removeClass("hide");
+    //           console.log("is here");  
+    //         }
+    //         else{
+    //           console.log("is not here");
+    //           $("#pageAbout").removeClass("show");  
+    //           $("#pageAbout").addClass("hide");
+    //         }
+    //     }
+    // });
+    })
+
+
+</script>
 @endsection

@@ -1,5 +1,4 @@
 $(document).ready(() => {
-
     // function =======================================================
     // formater number function
     $("#content-form-item .keyup-number").on("keyup", function () {
@@ -19,8 +18,7 @@ $(document).ready(() => {
         if (type == "weight") {
             if (Number(value) >= 1000) {
                 result = formater_number(String(Number(value) / 1000)) + " Kg";
-            }
-            else {
+            } else {
                 result = formater_number(String(value)) + " Gr";
             }
         }
@@ -28,7 +26,6 @@ $(document).ready(() => {
         if (type == "number") {
             result = formater_number(String(value));
         }
-
 
         $(`#content-form-item ${elemen_target}`).html(result);
     });
@@ -45,28 +42,28 @@ $(document).ready(() => {
 
         var result = Number(current_stock_value) + Number(value);
         $("#content-form-item #stock").val(result);
-        $("#content-form-item #show-stock").html(formater_number(String(result)));
-
-
+        $("#content-form-item #show-stock").html(
+            formater_number(String(result))
+        );
 
         console.log(result);
     });
 
     // generate slug function
     $("#content-form-item .action-generate-slug").submit(() => {
-
         var data_ajax = {
-            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
             url: base_url("admin/items/generateSlug"),
             data: { name: $("#content-form-item #name").val() },
-            type: "POST"
+            type: "POST",
         };
 
         action_rest(data_ajax)
             .done((response) => {
                 console.log(response);
                 $("#content-form-item #slug").val(response.response);
-
             })
             .fail((jqXHR, textStatus, errorThrown) => {
                 console.log(jqXHR);
@@ -78,12 +75,15 @@ $(document).ready(() => {
     function set_item_data() {
         const photo = $("#content-form-item #photo").prop("files")[0];
         const name = $("#content-form-item #name").val();
-        const slug = $("#content-form-item #slug").val()
-        const description = $("#content-form-item #description").val()
-        const weight = $("#content-form-item #weight").val()
-        const stock = $("#content-form-item #stock").val()
-        const price = $("#content-form-item #price").val()
-        const category = $("option:selected", "#content-form-item #category").val()
+        const slug = $("#content-form-item #slug").val();
+        const description = $("#content-form-item #description").val();
+        const weight = $("#content-form-item #weight").val();
+        const stock = $("#content-form-item #stock").val();
+        const price = $("#content-form-item #price").val();
+        const category = $(
+            "option:selected",
+            "#content-form-item #category"
+        ).val();
         let formData = new FormData();
         formData.append("item_image", photo);
         formData.append("item_name", name);
@@ -106,55 +106,67 @@ $(document).ready(() => {
 
         alert_show(data_success, data_message);
 
-
         $("#content-form-item .form-control").removeClass("is-invalid");
         $("#content-form-item .info").html("");
 
-
         if (data_error.item_name) {
             $("#content-form-item #name").addClass("is-invalid");
-            $("#content-form-item #infoName").html(input_info(false, data_error.item_name));
+            $("#content-form-item #infoName").html(
+                input_info(false, data_error.item_name)
+            );
         }
         if (data_error.category_id) {
             $("#content-form-item #category").addClass("is-invalid");
-            $("#content-form-item #infoCategory").html(input_info(false, data_error.category_id));
+            $("#content-form-item #infoCategory").html(
+                input_info(false, data_error.category_id)
+            );
         }
         if (data_error.item_weight) {
             $("#content-form-item #weight").addClass("is-invalid");
-            $("#content-form-item #infoWeight").html(input_info(false, data_error.item_weight));
+            $("#content-form-item #infoWeight").html(
+                input_info(false, data_error.item_weight)
+            );
         }
         if (data_error.item_stock) {
             $("#content-form-item #stock").addClass("is-invalid");
-            $("#content-form-item #infoStock").html(input_info(false, data_error.item_stock));
+            $("#content-form-item #infoStock").html(
+                input_info(false, data_error.item_stock)
+            );
         }
         if (data_error.item_price) {
             $("#content-form-item #price").addClass("is-invalid");
-            $("#content-form-item #infoPrice").html(input_info(false, data_error.item_price));
+            $("#content-form-item #infoPrice").html(
+                input_info(false, data_error.item_price)
+            );
         }
         if (data_error.slug) {
             $("#content-form-item #slug").addClass("is-invalid");
-            $("#content-form-item #infoSlug").html(input_info(false, data_error.slug));
+            $("#content-form-item #infoSlug").html(
+                input_info(false, data_error.slug)
+            );
         }
         if (data_error.item_image) {
             $("#content-form-item #photo").addClass("is-invalid");
-            $("#content-form-item #infoPhoto").html(input_info(false, data_error.item_image));
+            $("#content-form-item #infoPhoto").html(
+                input_info(false, data_error.item_image)
+            );
         }
     }
-
 
     // end function  ===================================================
 
     // add item=========================================================
     $(".action-add-item").on("click", function () {
-
         var data_ajax = {
-            url: base_url('admin/items'),
-            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+            url: base_url("admin/items"),
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
             data: set_item_data(),
-            type: "POST"
+            type: "POST",
         };
 
-        console.log(data_ajax);
+        $("#main-load").addClass("show");
 
         action_rest_file(data_ajax)
             .done((response) => {
@@ -172,7 +184,9 @@ $(document).ready(() => {
     $(".show-update").on("click", () => {
         var btn = `<button type="button" class="action-update-item btn main-btn" style="width: fit-content">Update Data</button>`;
         $("#itemModal #itemModalLabel").html("Update Product Data");
-        $("#itemModal modal-body").html("Are you sure you want to update this data");
+        $("#itemModal modal-body").html(
+            "Are you sure you want to update this data"
+        );
         $("#itemModal #action-btn").html(btn);
 
         $(".action-update-item").on("click", () => {
@@ -182,31 +196,34 @@ $(document).ready(() => {
             set_data.append("_method", "PUT");
 
             var data_ajax = {
-                url: base_url('admin/items/' + static_slug),
-                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                url: base_url("admin/items/" + static_slug),
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+                        "content"
+                    ),
+                },
                 data: set_data,
-                type: "POST"
+                type: "POST",
             };
 
-            console.log(data_ajax);
+            $("#main-load").addClass("show");
 
             action_rest_file(data_ajax)
                 .done((response) => {
-
-                    localStorage.setItem('alert_success', JSON.stringify(response));
-                    window.location.replace(base_url(`admin/items/${slug}/edit`));
-
-
+                    localStorage.setItem(
+                        "alert_success",
+                        JSON.stringify(response)
+                    );
+                    window.location.replace(
+                        base_url(`admin/items/${slug}/edit`)
+                    );
                 })
                 .fail((jqXHR, textStatus, errorThrown) => {
                     console.log(jqXHR);
                     item_fail(jqXHR);
-
                 });
         });
     });
-
-
 
     // end update item ==============================================
 
@@ -214,29 +231,37 @@ $(document).ready(() => {
     $(".show-delete").on("click", () => {
         var btn = `<button type="button" class="action-delete-item btn fail-btn" style="width: fit-content">Delete Data</button>`;
         $("#itemModal #itemModalLabel").html("Delete Product Data");
-        $("#itemModal modal-body").html("Are you sure you want to delete this data");
+        $("#itemModal modal-body").html(
+            "Are you sure you want to delete this data"
+        );
         $("#itemModal #action-btn").html(btn);
 
         $(".action-delete-item").on("click", function () {
-            var static_slug = $("#itemModal #slug").val()
+            var static_slug = $("#itemModal #slug").val();
 
             var data_ajax = {
-                url: base_url('admin/items/' + static_slug),
-                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                url: base_url("admin/items/" + static_slug),
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+                        "content"
+                    ),
+                },
                 data: {},
-                type: "DELETE"
+                type: "DELETE",
             };
 
-
+            $("#main-load").addClass("show");
             action_rest(data_ajax)
                 .done((response) => {
-                    localStorage.setItem('alert_success', JSON.stringify(response));
+                    localStorage.setItem(
+                        "alert_success",
+                        JSON.stringify(response)
+                    );
                     window.location.replace(base_url(`admin/items`));
                 })
                 .fail((jqXHR, textStatus, errorThrown) => {
                     console.log(jqXHR);
                 });
-
         });
     });
 

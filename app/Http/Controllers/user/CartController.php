@@ -188,7 +188,7 @@ class CartController extends Controller
     }
 
     public function delete_all(){
-        Cart::where("user_id",auth()->user()->id)->delete();
+        Cart::where("user_id",auth()->user()->id_user)->delete();
         $send_json = [
             "success" => true,
             "response" => "delete successfuly"

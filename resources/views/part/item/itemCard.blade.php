@@ -10,7 +10,7 @@
               @endphp  
             <div class="{{ $mobile_column }} {{ $web_column }} mb-3">
                 <a href="{{ $path }}" class="min-text text-decoration-none">
-                    <div class="card" style="width: 100%;">
+                    <div class="card animate__animated animate__fadeInBottomLeft" style="width: 100%;">
                     <img src="{{ asset($row['item_image']) }}" alt="" style="width: 100% ;height:8rem;  object-fit: cover; object-position: 15% 10%;">
                     <div class="card-body">
                         <h6 class="card-title fw-bold" style="min-height: 4rem;">{{ $row['item_name'] }}</h6>

@@ -157,13 +157,13 @@
 
 
 
-                <div class="col-12" >
+                <div class="col-12" id="section-biodata">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link {{ ($subMenu == "" || $subMenu == "biodata")? 'active' : '' }} " aria-current="page" href="/admin?subMenu=biodata"><i class="fa-solid fa-user me-2"></i>My Biodata</a>
+                            <a class="nav-link {{ ($subMenu == "" || $subMenu == "biodata")? 'active' : '' }} " aria-current="page" href="/admin?subMenu=biodata#section-biodata"><i class="fa-solid fa-user me-2"></i>My Biodata</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ ($subMenu != "" && $subMenu == "address")? 'active':'' }}" href="/admin?subMenu=address"><i class="fa-solid fa-location-dot me-2"></i>My Address</a>
+                            <a class="nav-link {{ ($subMenu != "" && $subMenu == "address")? 'active':'' }}" href="/admin?subMenu=address#section-biodata"><i class="fa-solid fa-location-dot me-2"></i>My Address</a>
                         </li>
                         
                     </ul>

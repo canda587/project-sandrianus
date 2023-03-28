@@ -82,7 +82,7 @@
                 data:{},
                 type:"DELETE"
             };
-
+            $("#main-load").addClass("show");
             action_rest(data_ajax)
             .done((response) => {
                 // console.log(response);

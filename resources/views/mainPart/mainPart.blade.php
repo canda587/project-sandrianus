@@ -18,6 +18,7 @@
     <link href="{{ asset('assets/css/myCSS/styleMain.css') }}" rel="stylesheet" >
     <link href="{{ asset('assets/css/myCSS/styleUser.css') }}" rel="stylesheet" >
     <link href="{{ asset('assets/css/myCSS/styleAdmin.css') }}" rel="stylesheet" >
+    <link href="{{ asset('assets/animate/animate.css') }}" rel="stylesheet" >
     <!-- fonsawsome -->
     <link rel="stylesheet" href="{{ asset('assets/fontawsome/css/all.min.css') }}">
 
@@ -43,6 +44,15 @@
       <strong id="textType"></strong> <span id="textContent"></span>
   </div> 
 
+  <div id="main-load" class="main-load" style="z-index: 1000000">
+    <div class="position-absolute top-50 start-50 translate-middle ">
+      <div class="spinner-border text-light" style="width: 7rem; height: 7rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      
+    </div>
+  </div>
+
 @yield('mainBody')
 
   @include('part.item.logOut')
@@ -58,13 +68,23 @@
     $(document).ready(()=>{
       var is_alert = JSON.parse(localStorage.getItem('alert_success'))
 
+
+      
+     
       if(is_alert){
         alert_show(is_alert.success,is_alert.response);
         localStorage.removeItem('alert_success');
       }
 
+      scroll_page();
+
+       
+      
+   
+      
 
     });
+
   </script>
    
 

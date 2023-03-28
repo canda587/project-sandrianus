@@ -15,6 +15,10 @@
 .head-nav {
     background-color: var(--darkness-color-secondary);
 }
+.head-nav .container {
+    animation: slideInRight; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+}
 
 .head-nav a {
     font-size: 0.8em;
@@ -186,6 +190,8 @@
     position: relative;
     border-end-end-radius: 2rem;
     border-end-start-radius: 2rem;
+    animation: slideInDown; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
 }
 
 .head-content .child-content {
@@ -216,12 +222,47 @@
 
 /* tutup head content */
 
+/* main content */
+.main-content.show {
+    opacity: 1;
+}
+
+.main-content.show {
+    opacity: 1;
+    animation: fadeInDown; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 0.5s; /* don't forget to set a duration! */
+}
+.main-content.hide {
+    opacity: 0;
+    animation: fadeOutDown; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
+}
+
+#account-body {
+    animation: fadeInDown; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+/* end main content */
+
 /* middel content */
 .middle-content {
+    opacity: 0;
     width: 100%;
     padding: 2rem 0.5rem 1rem 0.5rem;
     /* background-color: var(--main-color); */
     background-image: url(../../images/img_situs/banner-category.jpg);
+}
+
+.middle-content.show {
+    opacity: 1;
+    animation: slideInDown; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 0.5s; /* don't forget to set a duration! */
+}
+.middle-content.hide {
+    opacity: 0;
+    animation: fadeOut; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
 }
 
 .middle-content .title {
@@ -271,6 +312,18 @@
     background-color: var(--darkness-color-dark);
     color: black;
     padding: 2rem 0.5rem 1rem 0.5rem;
+}
+
+.tail-content.show {
+    opacity: 1;
+    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+.tail-content.hide {
+    opacity: 0;
+    animation: fadeOutDown; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
 }
 
 /* tutup tail content */
@@ -333,6 +386,25 @@
 }
 
 /* end alert --------------------------------------------------------------------------- */
+
+/* load ------------------------------------------------------------------------------- */
+.main-load {
+    position: fixed;
+    background-color: rgba(12, 0, 44, 0.6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.main-load.show {
+    display: block;
+    animation: zoomIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 0.5s; /* don't forget to set a duration! */
+}
+
+/* end load --------------------------------------------------------------------------- */
 
 /* pagination ----------------------------------------------------------------------- */
 

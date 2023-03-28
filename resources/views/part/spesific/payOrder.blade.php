@@ -219,7 +219,7 @@
                 type: "POST"
             };
 
-        console.log(data_ajax);
+        $("#main-load").addClass("show");
 
         action_rest(data_ajax)
             .done((response) => {
@@ -250,7 +250,7 @@
                 type: "POST"
             };
 
-        console.log(data_ajax);
+        $("#main-load").addClass("show");
 
         action_rest_file(data_ajax)
             .done((response) => {

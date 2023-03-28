@@ -11,7 +11,7 @@
 
 <div class="web"  style="margin-top: 9rem;"></div>
 <div class="mobile" style="margin-top: 6rem;"></div>
-<div class="container">
+<div class="container" >
     <div class="row">
         {{-- sidebar --}}
         @include('part.sidebar')
@@ -19,7 +19,7 @@
 
 
 
-        <div class="col-lg-9 colorDis">
+        <div class="col-lg-9 colorDis" id="account-body">
             {{-- header --}}
             @include('part.childHeader')
             {{-- end header --}}

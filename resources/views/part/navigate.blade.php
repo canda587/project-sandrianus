@@ -1,7 +1,7 @@
 
      
  {{-- navigate --}}
- <div class="shadow-sm fixed-top">
+ <div class="shadow-sm fixed-top" id="main-navigate">
  <div class="web head-nav">
      <div class="container d-flex justify-content-end">
          <a href="/#pageRecommendation" class="text-dark"><i class="fa-solid fa-receipt me-2"></i>Recommendation</a>

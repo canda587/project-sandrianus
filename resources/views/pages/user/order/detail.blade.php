@@ -123,7 +123,7 @@
                     },
                     type:"POST"
                 };
-
+                $("#main-load").addClass("show");
                 action_rest(data_ajax)
                 .done((response) => {
                   console.log(response);
@@ -220,7 +220,7 @@
                 },
                 type:"POST"
             };
-
+            $("#main-load").addClass("show");
             action_rest(data_ajax)
             .done((response) => {
                 console.log(response);

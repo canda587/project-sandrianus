@@ -38,6 +38,7 @@
             type:"POST"
         };
 
+        $("#main-load").addClass("show");
         action_rest(data_ajax)
         .done((response) => {
             

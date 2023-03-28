@@ -47,54 +47,54 @@
 
 
 <div class="auth-content auth dark-color shadow" style=" z-index:3; " >
-    <div class="ribbon text-center">
-        <div class="font-style-3" style="font-size: 1.5em;">Login</div>
+    <div class="auth-body">
+
+        <div class="ribbon text-center">
+            <div class="font-style-3" style="font-size: 1.5em;">Login</div>
+        </div>
+    
+        <form class="form-action-autenticate" action="/auth" method="POST">
+         
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="row pt-3">
+                <div class="col-12  mb-3">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="email" value="{{ Request::old('email') }}" autocomplete="off" autofocus>
+                        <label for="email">Email address</label>
+                    </div>
+    
+                    <div class="info" id="infoEmail"></div>
+                </div>
+                <div class="col-12 mb-3">
+                    <div class="form-floating">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="password">
+                        <label for="password">Password</label>
+                    </div>
+    
+                    <div class="info" id="infoPassword"></div>
+                </div>
+        
+                <div class="col-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mb-1">
+                    <button type="submit" class="btn main-btn"> Login </button>
+                    <hr>
+                </div>
+                
+                <div class="col-12 mb-1">
+                   <p>You not ave a Account ? <a href="/regis" class="text-decoration-none second-color-dark">Registration </a></p> 
+                   <a href="/" class="text-decoration-none third-color-dark"> Back To Home Page </a>
+                </div>
+                
+            </div>
+    
+    
+        </form>
     </div>
-    
-    
 
-    
-
-    <form class="form-action-autenticate" action="/auth" method="POST">
-     
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="row pt-3">
-            <div class="col-12  mb-3">
-                <div class="form-floating">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="email" value="{{ Request::old('email') }}" autocomplete="off" autofocus>
-                    <label for="email">Email address</label>
-                </div>
-
-                <div class="info" id="infoEmail"></div>
-            </div>
-            <div class="col-12 mb-3">
-                <div class="form-floating">
-                    <input type="password" class="form-control" name="password" id="password" placeholder="password">
-                    <label for="password">Password</label>
-                </div>
-
-                <div class="info" id="infoPassword"></div>
-            </div>
-    
-            <div class="col-12">
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 mb-1">
-                <button type="submit" class="btn main-btn"> Login </button>
-                <hr>
-            </div>
-            
-            <div class="col-12 mb-1">
-               <p>You not ave a Account ? <a href="/regis" class="text-decoration-none second-color-dark">Registration </a></p> 
-               <a href="/" class="text-decoration-none third-color-dark"> Back To Home Page </a>
-            </div>
-            
-        </div>
-
-
-    </form>
 
     
 </div>
