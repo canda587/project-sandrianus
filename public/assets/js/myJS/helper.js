@@ -119,17 +119,20 @@ function component_not_found() {
 
 function scroll_page() {
     $(window).on("scroll", function () {
-        var height_nav = $("#main-navigate").height();
-        var y_scroll_pos = Number(window.pageYOffset) + Number(height_nav);
-        const recommend = $("#pageRecommendation");
-        const category = $("#pageKategori");
-        const product = $("#pageProduct");
-        const about = $("#pageAbout");
-
+        const nav = $("#main-navigate").length;
+        const recommend = $("#pageRecommendation").length;
+        const category = $("#pageKategori").length;
+        const product = $("#pageProduct").length;
+        const about = $("#pageAbout").length;
         // var scroll_pos_test = element_position;
 
+        if (nav > 0) {
+            var height_nav = $("#main-navigate").height();
+            var y_scroll_pos = Number(window.pageYOffset) + Number(height_nav);
+        }
+
         // page category
-        if (recommend) {
+        if (recommend > 0) {
             var recommend_position = Number(
                 $("#pageRecommendation").offset().top
             );
@@ -143,7 +146,7 @@ function scroll_page() {
         }
 
         // page category
-        if (category) {
+        if (category > 0) {
             var category_position = Number($("#pageKategori").offset().top);
             if (y_scroll_pos > category_position - 300) {
                 $("#pageKategori").addClass("show");
@@ -155,7 +158,7 @@ function scroll_page() {
         }
 
         // page product
-        if (product) {
+        if (product > 0) {
             var product_position = Number($("#pageProduct").offset().top);
             if (y_scroll_pos > product_position - 300) {
                 $("#pageProduct").addClass("show");
@@ -167,7 +170,7 @@ function scroll_page() {
         }
 
         // page about
-        if (about) {
+        if (about > 0) {
             var about_position = Number($("#pageAbout").offset().top);
             if (y_scroll_pos > about_position - 300) {
                 $("#pageAbout").addClass("show");

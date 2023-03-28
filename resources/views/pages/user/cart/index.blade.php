@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="content-action-cart  col-12">
                                     <hr class="m-0 mt-3 mb-3">
                                     <div class="row">
                                         <div class="col-6">
@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 ">
+                            <div class="content-action-cart col-12">
                                 <div class="row">
                                     <div class="col-6 main-background">
                                         <button class="btn bg-transparent main-color-dark" data-bs-toggle="modal" data-bs-target="#cartModal">Delete All</button>

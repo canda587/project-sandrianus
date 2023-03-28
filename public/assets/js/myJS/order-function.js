@@ -177,6 +177,7 @@ function all_order() {
                 }
 
                 if (data_error.expedition_service) {
+                    $("#main-load").removeClass("show");
                     $("#expedition-service").addClass("is-invalid");
                     $("#info-expedition-service").html(
                         input_info(data_success, data_error.expedition_type)

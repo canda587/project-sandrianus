@@ -103,7 +103,7 @@ $(document).ready(() => {
         var data_success = jqXHR.responseJSON.success;
 
         $("#itemModal").modal("hide");
-
+        $("#main-load").removeClass("show");
         alert_show(data_success, data_message);
 
         $("#content-form-item .form-control").removeClass("is-invalid");

@@ -138,7 +138,7 @@
                 var data_message = jqXHR.responseJSON.response;
                 var data_success = jqXHR.responseJSON.success;
                 $("#orderModal").modal("hide");
-
+                $("#main-load").removeClass("show");
                 alert_show(data_success,data_message);
             });
         });

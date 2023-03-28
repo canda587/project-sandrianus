@@ -101,9 +101,9 @@ class OrderController extends Controller
             Expedition::create($set_expedition);
             ProofPayment::create($set_payment);
 
-            $item = Item::firstWhere("id_item",$set_data['item_id']);
-            Item::where("id_item",$set_data['item_id'])
-                ->update(['item_stock' => $item['item_stock'] - $set_data['order_count']]);
+            // $item = Item::firstWhere("id_item",$set_data['item_id']);
+            // Item::where("id_item",$set_data['item_id'])
+            //     ->update(['item_stock' => $item['item_stock'] - $set_data['order_count']]);
 
             return $code;
     }
@@ -156,11 +156,11 @@ class OrderController extends Controller
             ];
              ListOrder::create($list);
 
-           $item =  Item::firstWhere("id_item",$cart->item_id);
-           Item::where("id_item",$cart->item_id)
-            ->update([
-                'item_stock' => $item->item_stock - $cart->cart_count
-            ]);
+        //    $item =  Item::firstWhere("id_item",$cart->item_id);
+        //    Item::where("id_item",$cart->item_id)
+        //     ->update([
+        //         'item_stock' => $item->item_stock - $cart->cart_count
+        //     ]);
         }
        
 
@@ -234,10 +234,6 @@ class OrderController extends Controller
 
             $processed = static::order_store($set_data);
             
-            
-
-        
-
             $status_code = 200;
             $send_json = [
                 'success' => true,

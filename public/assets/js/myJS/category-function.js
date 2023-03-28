@@ -44,6 +44,7 @@ $(document).ready(() => {
     // fail function
     function category_fail(jqXHR) {
         $("#categoryModal").modal("hide");
+        $("#main-load").removeClass("show");
         var data_error = jqXHR.responseJSON.response;
         var data_message = jqXHR.responseJSON.message;
         var is_success = jqXHR.responseJSON.success;

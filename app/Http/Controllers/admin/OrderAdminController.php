@@ -5,8 +5,10 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\ListOrder;
 use App\Models\Transaction;
 use App\Models\ListTransaction;
+use App\Models\Item;
 use App\Models\StatusOrder;
 use App\Models\ProofPayment;
 class OrderAdminController extends Controller
@@ -110,6 +112,19 @@ class OrderAdminController extends Controller
             $message = "proof of payment has been set to be valid and the status of this order has been updated to complete payment";
             Order::where("code", $order->code)
                     ->update(['status_id' => 2]);
+
+            $lists = ListOrder::where("order_code", $order->code)->get();
+
+            foreach ($lists as $list) {
+                $item =  Item::firstWhere("id_item",$list->item_id);
+                Item::where("id_item",$list->item_id)
+                    ->update([
+                        'item_stock' => $item->item_stock - $list->order_count
+                    ]);
+            }
+
+
+            
         }
 
 
